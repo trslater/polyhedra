@@ -1,0 +1,14 @@
+{
+  "name": "polyhedra",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tristan Slater <hello@trslater.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.141.0"
+  }
+}
