@@ -2,20 +2,18 @@ import { Scene, PerspectiveCamera, BoxGeometry, MeshNormalMaterial, Mesh, WebGLR
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { GUI } from "dat.gui"
 
-const windowAspect = window.innerWidth/window.innerHeight
-
-// 3D Environment
+// 3D World
 // ----------------------------------------------------------------------------
 
 const scene = new Scene()
-const camera = new PerspectiveCamera(75, windowAspect, 0.1, 1000)
+const camera = new PerspectiveCamera(75, viewportAspect(), 0.1, 1000)
 const renderer = new WebGLRenderer()
 const controls = new OrbitControls(camera, renderer.domElement)
 const geometry = new BoxGeometry(2, 2, 2, 2)
 const material = new MeshNormalMaterial()
 const cube = new Mesh(geometry, material)
 
-renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setSize(...viewportDimensions())
 
 document.body.appendChild(renderer.domElement)
 
@@ -28,6 +26,22 @@ function animate() {
 	requestAnimationFrame(animate)
 	renderer.render(scene, camera)
 }
+
+function resizeViewport() {
+    camera.aspect = viewportAspect()
+    camera.updateProjectionMatrix()
+    renderer.setSize(...viewportDimensions())
+}
+
+function viewportAspect() {
+    return window.innerWidth/window.innerHeight
+}
+
+function viewportDimensions() {
+    return [window.innerWidth, window.innerHeight]
+}
+
+window.onresize = resizeViewport
 
 // GUI
 // ----------------------------------------------------------------------------
