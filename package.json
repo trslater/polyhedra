@@ -2,14 +2,18 @@
   "name": "polyhedra",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html"
   },
   "author": "Tristan Slater <hello@trslater.ca>",
   "license": "MIT",
   "dependencies": {
     "dat.gui": "^0.7.9",
     "three": "^0.141.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.0"
   }
 }
