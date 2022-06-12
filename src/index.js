@@ -1,5 +1,5 @@
 import { GUI } from "dat.gui"
-import { makeWorld } from "/world.js"
+import { makeWorld } from "./world.js"
 
 const gui = new GUI()
 const world = makeWorld(document.body, gui)
