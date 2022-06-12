@@ -2,10 +2,14 @@
 
 A 3D exploration of polyhedra.
 
-## Usage
-
-This is designed to be used with Parcel bundler. It can be run without installing, using NPX:
+## Installation
 
 ```
-npx parcel index.html
+npm install
+```
+
+## Usage
+
+```
+npm start
 ```
